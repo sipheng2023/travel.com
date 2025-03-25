@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Slideshow</title>
+    <style>
+        .slideshow-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .slide {
+            display: inline-block;
+            width: 200px; /* Adjust width as needed */
+            margin-right: 10px; /* Adjust spacing */
+            vertical-align: top; /* Align to top */
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); } /* Adjust based on content */
+        }
+
+        .slideshow-container {
+            animation: slide 20s linear infinite; /* Adjust duration */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="images/vv1.jpg" alt="Pakse">
+            <h3>Pakse</h3>
+            <p>The city of love and lights.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        <div class="slide">
+            <img src="images/vv2.jpg" alt="Louangphabang">
+            <h3>Louangphabang</h3>
+            <p>A vibrant blend of tradition and modernity.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        <div class="slide">
+            <img src="images/vv3.jpg" alt="Vangvieng">
+            <h3>Vangvieng</h3>
+            <p>Ancient history and delicious cuisine.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        <div class="slide">
+            <img src="images/vv4.jpg" alt="khammouane">
+            <h3>khammouane</h3>
+            <p>Tropical paradise with stunning beaches.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        <div class="slide">
+            <img src="images/vv5.jpg" alt="Borkeo">
+            <h3>Borkeo</h3>
+            <p>The city that never sleeps.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        <div class="slide">
+            <img src="images/vv1.jpg" alt="Louangnamtha">
+            <h3>Louangnamtha</h3>
+            <p>Ancient Incan city.</p>
+            <a href="#">Book Trip</a>
+        </div>
+        </div>
+
+</body>
+</html>

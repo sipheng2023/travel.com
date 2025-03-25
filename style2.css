@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+nav {
+    background-color: #f0f0f0;
+    padding: 0.5em 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between; /* Added to move links to the right */
+}
+
+nav a {
+    margin: 0 1em;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo-container {
+    position: absolute;
+    left: 1em;
+    top: -30px;
+}
+
+.logo {
+    height: 80px;
+}
+
+.nav-links {
+    display: flex; /* Added to keep links in a row */
+}
+
+/* ... (rest of the CSS) ... */
