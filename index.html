@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Travel Adventures</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+        <a class="navbar-brand" href="#">
+            <img src="logo.jpeg" alt="Discover Laos" height="40"> LAO VOYAGE
+        </a>
+        <div class="ms-auto d-flex align-items-center">
+            <a href="#" class="me-3 text-dark"><i class="bi bi-person"></i> Log in</a>
+            
+            <div class="dropdown me-3">
+                <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-globe"></i> Language
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w40/us.png" width="20"> English</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w40/fr.png" width="20"> French</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="https://flagcdn.com/w40/la.png" width="20"> Lao</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <header>
          <h1>LAO VOYAGE.</h1>
     </header>
 
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
         <div class="logo-container">
-            <img src="logo.jpeg" alt="Travel Logo" class="logo" width="70px" height="20px">
+           <!--  <img src="logo.jpeg" alt="Travel Logo" class="logo" width="70px" height="20px"> -->
             </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+             <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html" target="_blank">Blogs</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="blog.html" target="_blank">Blogs</a></li>
-            <li><a href="index.html#book">Book Now</a></li>
         </ul>
     </nav>
 
@@ -76,22 +97,7 @@
         </div>
     </section>
 
-    <section id="book" class="booking-form">
-        <h2>Book Your Trip</h2>
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="email" id="email" placeholder="Your Email">
-        <select id="destinationSelect">
-            <option value="">Select Destination</option>
-            <option value="Paris">Paris</option>
-            <option value="Tokyo">Tokyo</option>
-            <option value="Rome">Rome</option>
-            <option value="Bali">Bali</option>
-            <option value="New York">New York</option>
-            <option value="Machu Picchu">Machu Picchu</option>
-        </select>
-        <input type="date" id="date">
-        <button id="bookButton">Book Now</button>
-    </section>
+
 
     <footer>
         <p>&copy; 2024 Travel Adventures</p>
