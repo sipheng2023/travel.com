@@ -8,21 +8,65 @@
 </head>
 <body>
     <header>
-        <h1>Travel Adventures</h1>
-    </header>
+        
+        <marquee width="60%" direction="right" height="100px">
+           <h1>Weclome to LAO VOYAGE.</h1>
+           </marquee>
+   </header>
 
-    <nav>
-        <div class="logo-container">
-            <img src="logo.jpeg" alt="Travel Logo" class="logo" width="60px" height="50px">
-            </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="index.html#book">Book Now</a></li>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand" href="#">
+      <img src="logo.jpeg" alt="Travel Adventures Logo" width="30" height="30" class="d-inline-block align-text-top">
+      Travel Adventures
+    </a></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="destinations.html">Destination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">contact us</a>
+          </li>
+
+
+          
+          <li class="nav-item dropdown" hidden>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" hidden>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
         </ul>
-    </nav>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
     <section class="contact-content">
         <h2>Contact Us</h2>
@@ -43,23 +87,30 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" onclick="gotoemail()">Send Message</button>
         </form>
 
         <div class="contact-info">
             <h3>Our Contact Information</h3>
-            <p>ອີເມວ / Email: </p>
+            <p>ອີເມວ / Email: </p> 
             <p>ໂທລະສັບ / Phone: </p>
             <p>ທີ່ຢູ່ / Address: 123 Green Street, Vientiane, Laos</p>
         </div>
+        <button id="scrollToTop" class="scroll-to-top">Book Now</button>
+        <a href="mailto:email@example.com">Send Email</a>
     </section>
 
-    
+
 
     <footer>
         <p>&copy; 2024 Travel Adventures</p>
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        function gotoemail(){
+            <a href="mailto:email@example.com">Send Email</a>
+        }
+    </script>
 </body>
 </html>
