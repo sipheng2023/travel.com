@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="destinations.html">Destination</a>
@@ -98,8 +98,13 @@
             <p>ໂທລະສັບ / Phone: </p>
             <p>ທີ່ຢູ່ / Address: 123 Green Street, Vientiane, Laos</p>
         </div>
-        <button id="scrollToTop" class="scroll-to-top">Book Now</button>
-        <a href="mailto:email@example.com">Send Email</a>
+    
+     <!--    <a href="mailto:email@example.com">Send Email</a> -->
+        <a  href="booking.html">Book now</a>
+        <button onclick="gotolink()">Book now</button>
+        
+          
+
     </section>
 
 
@@ -113,6 +118,10 @@
         function gotoemail(){
             <a href="mailto:email@example.com">Send Email</a>
         }
+        function gotolink(){
+            window.location.href = "booking.html";
+        }
+
     </script>
 </body>
 </html>
