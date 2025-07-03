@@ -1,441 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paws & Care - Pet Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Travel Adventures</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-gray-800">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand" href="#">
+          <img src="logo.jpeg" alt="Travel Adventures Logo" width="30" height="30" class="d-inline-block align-text-top">
+          Travel Adventures
+        </a></a>
 
-  <style>
-    body {
-      font-family: 'Phetsarath OT', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-    }
-  </style>
-
-<!-- Card hover effect: scale and shadow transition -->
-<style>
-  .service-card {
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .service-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 10px 24px 0 rgba(59,130,246,0.15), 0 1.5px 4px 0 rgba(0,0,0,0.08);
-  }
-
-  #location {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-  .map-container {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-</style>
-
-    <!-- Navbar with Language Switcher -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo" class="w-8 h-8">
-                <span class="font-bold text-xl">Paws & Care</span>
-            </div>
-            <div class="flex items-center space-x-6">
-                <a href="gallery.html" class="text-gray-700 hover:text-blue-500 transition">gallery</a>
-                <a href="#services" class="text-gray-700 hover:text-blue-500 transition">Services</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-500 transition">Contact</a>
-                <div class="flex items-center space-x-2">
-                    <button id="lang-en" class="px-2 py-1 rounded hover:bg-blue-100 focus:outline-none font-medium">EN</button>
-                    <span>|</span>
-                    <button id="lang-la" class="px-2 py-1 rounded hover:bg-blue-100 focus:outline-none font-medium">LA</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <script>
-        const translations = {
-            en: {
-                services: "Services",
-                contact: "Contact",
-                welcome: "Welcome to Paws & Care",
-                subtitle: "Your trusted partner in grooming, boarding, and loving your pets.",
-                explore: "Explore Services",
-                ourServices: "Our Services",
-                
-                grooming: "Grooming",
-                groomingSubtitle: "Grooming and Styling Details",
-                groomingDesc: "price ",
-                groomingDesc1: "We take the groomed dog. ",
-                groomingDesc2: "Price: 100,000 Kip for puppies and 200,000 Kip for adult dogs",
-
-                shower: "Shower",
-
-                swimming: "Swimming",
-
-                takecare: "Take Care",
-
-                training: "Training",
-
-                transportation: "Transportation",
-             
-       
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="destinations.html">Destination</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">contact us</a>
+              </li>
 
 
-
-
-                testimonials: "What Our Clients Say",
-                testimonialText: "\"Paws & Care took amazing care of our pup while we were on vacation. The staff is loving and professional!\"",
-                testimonialAuthor: "– Sarah M.",
-                getInTouch: "Get in Touch",
-                name: "Your Name",
-                email: "Your Email",
-                help: "How can we help you?",
-                send: "Send Message"
-            },
-            la: {
-                services: "ບໍລິການ",
-                contact: "ຕິດຕໍ່",
-                welcome: "ຍິນດີຕ້ອນຮັບ Paws & Care",
-                subtitle: " ສູນບໍລິການທີ່ທ່ານໄວ້ວາງໃຈໄດ້ ແລະ ມີມາດຕະຖານ ຕ້ອງທີ່ນີ້ເທົ່ານັ້ນ",
-                explore: "ดูบริการ",
-                ourServices: "ບໍລິການຂອງເຮົາ",
-
-
-
-
-                grooming: "ຕັດຂົນ",
-                groomingSubtitle: "ລາຍລະອຽດ ຕັດຂົນ ແລະ ຕົກແຕ່ງ",
-                groomingDesc1: "ຕັດຂົນ ແລະ ຕົກແຕ່ງຂົນໝາ ",
-                groomingDesc: "ລາຄາ",
-                groomingDesc2: ". ລາຄາ ໝານ້ອຍ=100,000 ກີບ ແລະ ໝາໃຫຍ່= 200,000 ກີບ",
-
-                  shower: "ອາບນ້ຳໝາ",
-
-                  swimming: "ລອຍນ້ຳໝາ",
-
-                  takecare : "ດູແລໝາ",
-
-                  training: "ຝຶກສອນ",
-
-                  transportation: "ຂົນສົ່ງ",
-
-           
-
-
-
-
-                testimonials: "ຄໍາເຫັນຂອງລູກຄ້າ",
-                testimonialText: "\"Paws & Care ดูแลน้องหมาของเราอย่างดีมากในช่วงที่เราไปเที่ยว พนักงานน่ารักและเป็นมืออาชีพ!\"",
-                testimonialAuthor: "– Sarah M.",
-                getInTouch: "ติดต่อเรา",
-                name: "ชื่อของคุณ",
-                email: "อีเมลของคุณ",
-                help: "เราสามารถช่วยอะไรคุณได้บ้าง?",
-                send: "ส่งข้อความ"
-            }
-        };
-
-        function setLanguage(lang) {
-            document.querySelector('nav a[href="#services"]').textContent = translations[lang].services;
-            document.querySelector('nav a[href="#contact"]').textContent = translations[lang].contact;
-            document.querySelector('h1').textContent = translations[lang].welcome;
-            document.querySelector('section.bg-blue-100 p').textContent = translations[lang].subtitle;
-            document.querySelector('section.bg-blue-100 a').textContent = translations[lang].explore;
-            document.querySelector('section#services h2').textContent = translations[lang].ourServices;
-
-            const serviceTitles = document.querySelectorAll('section#services h3');
-           //  const serviceSubTitles = document.querySelectorAll('section#services h2');
-             document.querySelector('section#services h2').textContent = translations[lang].serviceSubTitles;
-            const serviceDescs = document.querySelectorAll('section#services p');
-            const serviceList = document.querySelectorAll('section#services ul li');
-            const serviceList2 = document.querySelectorAll('section#services ul ol');
-
-            serviceTitles[0].textContent = translations[lang].grooming;
-            // serviceSubTitles[0].textContent = translations[lang].groomingSubtitle;
-            // document.querySelector('text-2xl font-bold mb-4 h2').textContent = translations[lang].serviceSubTitles;
-            serviceDescs[0].textContent = translations[lang].groomingDesc;
-            serviceList[0].textContent = translations[lang].groomingDesc1;
-            serviceList2[0].textContent = translations[lang].groomingDesc2;
-
-            serviceTitles[1].textContent = translations[lang].shower;
-
-            serviceTitles[2].textContent = translations[lang].swimming;
-
-            serviceTitles[3].textContent = translations[lang].takecare;
-
-            serviceTitles[4].textContent = translations[lang].training;
-
-             serviceTitles[5].textContent = translations[lang].transportation;
-     
- 
-      
-    
-
-            document.querySelector('section.bg-gray-50 h2').textContent = translations[lang].testimonials;
-            document.querySelector('section.bg-gray-50 p.text-lg').textContent = translations[lang].testimonialText;
-            document.querySelector('section.bg-gray-50 p.font-semibold').textContent = translations[lang].testimonialAuthor;
-            document.querySelector('section.bg-blue-50 h2').textContent = translations[lang].getInTouch;
-            document.querySelector('form input[type="text"]').placeholder = translations[lang].name;
-            document.querySelector('form input[type="email"]').placeholder = translations[lang].email;
-            document.querySelector('form textarea').placeholder = translations[lang].help;
-            document.querySelector('form button').textContent = translations[lang].send;
-        }
-
-        document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
-        document.getElementById('lang-la').addEventListener('click', () => setLanguage('la'));
-    </script>
-
-  <!-- Hero Section -->
-  <section class="bg-blue-100 py-16 px-6 text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Paws & Care</h1>
-    <p class="text-lg mb-6">Your trusted partner in grooming, boarding, and loving your pets.</p>
-    <a href="#services" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">Explore Services</a>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-
-      <!-- ເລີ່ມຕົ້ນ ກາດຂໍ້ມູນ  -->
-
-      <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog Grooming</h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#groomingModal">
-          More Details
-        </button>
-      </div>
-      <!-- Grooming Modal -->
-  
-      <div id="groomingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('groomingModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog Grooming Details</h2>
-          <img src="img/Grooming.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the groomed dog. </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('groomingModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
-
-      <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog Shower </h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#showerModal">
-          More Details
-        </button>
-      </div>
-      <!-- showerModal Modal -->
-  
-      <div id="showerModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('showerModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog Shower  Details</h2>
-          <img src="img/Shower.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the groomed dog. 1.	Dog Shower </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('showerModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
-               <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog Swimming </h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#swimmingModal">
-          More Details
-        </button>
-      </div>
-      <!-- swimming Modal -->
-  
-      <div id="swimmingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('swimmingModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog swimming Details</h2>
-          <img src="img/Swimming.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the groomed dog. </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('swimmingModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
-               <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog takecare</h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#takecareModal">
-          More Details
-        </button>
-      </div>
-      <!-- takecare Modal -->
-  
-      <div id="takecareModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('takecareModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog takecare Details</h2>
-          <img src="img/taking-care.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the takecareModal dog. </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('takecareModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
-               <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog training </h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#trainingModal">
-          More Details
-        </button>
-      </div>
-      <!-- training Modal -->
-  
-      <div id="trainingModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('trainingModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog training Details</h2>
-          <img src="img/training.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the groomed dog. </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('trainingModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
-               <div class="bg-white shadow-lg rounded-lg p-6 text-center service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Grooming" class="w-16 mx-auto mb-4">
-        <h3 class="text-xl font-semibold mb-2">Dog transportation </h3>
-      
-
-        <!-- Button trigger modal -->
-        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" data-toggle="modal" data-target="#transportationModal">
-          More Details
-        </button>
-      </div>
-      <!-- transportation Modal -->
-  
-      <div id="transportationModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
-        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-          <button class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold focus:outline-none" onclick="document.getElementById('transportationModal').classList.add('hidden')">&times;</button>
-          <h2 class="text-2xl font-bold mb-4">Dog transportation  Details</h2>
-          <img src="img/transportation service.jpg" alt="Dog Grooming" class="w-16 mx-auto mb-4">
-          <ul class="mb-4 text-left list-disc list-inside">
-            <li>-	We take the transportation  dog. </li>
-          </ul>
-          <p class="mb-2">Pricing:</p>
-          <ul class="mb-4 text-left list-disc list-inside">
-            <ol>100,000 Kip for puppies  and 200,000 Kip for adult dogs </ol>
-          </ul>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="document.getElementById('transportationModal').classList.add('hidden')">Close</button>
-        </div>
-      </div>
-  
-        <!-- end Modal -->
               
-  </section>
+              <li class="nav-item dropdown" hidden>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <header>
+        
+         <marquee width="60%" direction="right" height="100px">
+            <h1>Weclome to LAO VOYAGE.</h1>
+            </marquee>
+    </header>
 
-  <!-- Testimonials -->
-  <section class="bg-gray-50 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">What Our Clients Say</h2>
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-lg italic">"Paws & Care took amazing care of our pup while we were on vacation. The staff is loving and professional!"</p>
-      <p class="mt-4 font-semibold">– Sarah M.</p>
+
+
+    <div class="hero">
+        <div>
+            <h1>Why Choose Us?</h1>
+            ✅ Expert Travel Planners✅ 24/7 Customer Support✅ Best Price Guarantee✅ Personalized Itineraries
+        </div>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6 bg-yellow-100">
-    <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-    <form class="max-w-xl mx-auto grid gap-4">
-      <input type="text" placeholder="Your Name" class="border rounded-lg p-3" required>
-      <input type="email" placeholder="Your Email" class="border rounded-lg p-3" required>
-      <textarea placeholder="How can we help you?" rows="4" class="border rounded-lg p-3"></textarea>
-      <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Send Message</button>
-    </form>
-  </section>
+    <section id="destinations" class="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination">
+                <img src="images/ps1.jpg" alt="Paris">
+                <h3>Pakse</h3>
+                <p>The city of love and lights.</p>
+                <a href="program1.html" target="_blank">Book Trip</a>
+            </div>
+            <div class="destination">
+                <img src="images/lpb1.jpg" alt="Tokyo">
+                <h3>Louangphabang</h3>
+                <p>A vibrant blend of tradition and modernity.</p>
+                <a href="program1.html" target="_blank">Book Trip</a>
 
-<section id="location">
-  <b><h2>Our Location</h2></b>
-  <div class="map-container">
-    <div style="display: flex; justify-content: center;">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3794.353070170414!2d102.53997857517936!3d18.00881088298823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDAwJzMxLjciTiAxMDLCsDMyJzMzLjIiRQ!5e0!3m2!1sen!2sla!4v1751251230107!5m2!1sen!2sla" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
- 
-    </div>
-  
-</section>
+            </div>
+            <div class="destination">
+                <img src="images/vv1.jpg" alt="Rome">
+                <h3>Vangvieng</h3>
+                <p>Ancient history and delicious cuisine.</p>
+                <a href="program1.html" target="_blank">Book Trip</a>
+            </div>
+            <div class="destination">
+                <img src="images/ps2.jpg" alt="Bali">
+                <h3>khammouane</h3>
+                <p>Tropical paradise with stunning beaches.</p>
+                <a href="program1.html" target="_blank">Book Trip</a>
+            </div>
+            <div class="destination">
+                <img src="images/ps3.jpg" alt="New York">
+                <h3>Borkeo</h3>
+                <p>The city that never sleeps.</p>
+                <a href="program1.html" target="_blank"></a>>Book Trip</a>
+            </div>
+            <div class="destination">
+                <img src="images/ps4.jpg" alt="Machu Picchu">
+                <h3>Louangnamtha</h3>
+                <p>Ancient Incan city.</p>
+                <a href="program1.html" target="_blank">Book Trip</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 text-center py-6">
-    <a href="https://www.facebook.com/profile.php?id=100095121986897" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center mb-2 text-blue-600 hover:text-blue-800">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-1" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.406.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .592 23.406 0 22.675 0"/>
-      </svg>
-      Facebook
-    </a>
-    <p>&copy; 2025 Paws & Care. All rights reserved.</p>
-  </footer>
 
-    <script>
-        // Modal open/close logic
-        document.querySelectorAll('[data-toggle="modal"]').forEach(btn => {
-          btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = btn.getAttribute('data-target');
-            document.querySelector(target).classList.remove('hidden');
-          });
-        });
-      </script>
+
+    <footer>
+        <p>Follow us on social media:</p>
+        facebook: <a href="https://www.facebook.com/yourpage" target="_blank">Your Facebook Page</a><br>
+        Instagram: <a href="https://www.instagram.com/yourprofile" target="_blank">Your Instagram Profile</a><br>
+        <p>&copy; 2024 Travel Adventures</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
